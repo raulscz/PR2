@@ -11,7 +11,7 @@
             if (!$comprobacion=="") {
                 session_start();
                 $_SESSION['nombre']=$comprobacion['nombre_emp'];
-                header("location:../view/control.php");
+                header("location:../view/control_sala.php");
 
             }else if(!$comprobacion=="" && $comprobacion['tipo_emp']=="Mantenimiento"){
                 session_start();
