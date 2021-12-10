@@ -602,3 +602,81 @@ body.region-admin {
     background-color: #bb7a45;
     color: #fff;
 }
+
+.crear_inci {
+    background-image: url("../img/img_crear_inci.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_crear_inci {
+    height: 450px;
+    width: 650px;
+    border: 5px solid;
+    background: #d8e6e7;
+    border-color: #727c85;
+}
+
+.cuadro_crear_inci p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputCreInci {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #a9672a;
+    background-color: #bfb6a5;
+    outline: none;
+    color: #fff;
+}
+
+.btnCreInci {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #a9672a;
+    background-color: #bfb6a5;
+    color: #fff;
+}
+
+.act_inci {
+    background-image: url("../img/img_act_inci.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_act_inci {
+    height: 450px;
+    width: 650px;
+    border: 5px solid;
+    background: #b9854f;
+    border-color: #8a532b;
+}
+
+.cuadro_act_inci p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputActInci {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #d65616;
+    background-color: #9f9fa4;
+    outline: none;
+    color: #fff;
+}
+
+.btnActInci {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #d65616;
+    background-color: #9f9fa4;
+    color: #fff;
+}

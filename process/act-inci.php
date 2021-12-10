@@ -26,36 +26,35 @@
                     ?>
                     <br>
                     <form action="../process/recibir_act_inci.php" method="POST">
-                        <br>
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreMesa" id="data_incidencia" name="data_incidencia" value="<?php echo "{$registro['data_incidencia']}";?>">
+                                <input type="date" class="inputActInci" id="data_incidencia" name="data_incidencia" value="<?php echo "{$registro['data_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Hora:</p>
                             <div>
-                                <input type="time" class="inputCreMesa" id="hora_incidencia" name="hora_incidencia" value="<?php echo "{$registro['hora_incidencia']}";?>">
+                                <input type="time" class="inputActInci" id="hora_incidencia" name="hora_incidencia" value="<?php echo "{$registro['hora_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Descripción:</p>
                             <div>
-                                <input type="text" class="inputCreMesa" id="desc_incidencia" name="desc_incidencia" value="<?php echo "{$registro['desc_incidencia']}";?>">
+                                <input type="text" class="inputActInci" id="desc_incidencia" name="desc_incidencia" value="<?php echo "{$registro['desc_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Mesa:</p>
                             <div>
-                                <input type="number" class="inputCreMesa" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="number" class="inputActInci" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <div>
                                 <input type="hidden" name="id_incidencia" value="<?php echo "{$registro['id_incidencia']}";?>">
-                                <button type="submit" class="btnCreMesa">Guardar</button>
-                                <button onClick="location.href='../process/incidencias_admin.php'" class='btnCreMesa'>Cancelar</button>
+                                <button type="submit" class="btnActInci">Guardar</button>
+                                <button onClick="location.href='../process/incidencias_admin.php'" class='btnActInci'>Cancelar</button>
                             </div>
                         </div>
                     </form>
