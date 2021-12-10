@@ -141,16 +141,22 @@ table {
     background-image: url("../img/img_login.jpg");
     overflow-x: hidden;
     overflow-y: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .control_sala {
     background-image: url("../img/img_login.jpg");
     overflow-x: hidden;
     overflow-y: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .fondosala {
     background-image: url("../img/fondo_sala.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 @keyframes gradient {
@@ -249,4 +255,188 @@ table {
 
 .btnsala:hover {
     background-color: #acc1cd;
+}
+
+
+/*Estilos Zona Admins*/
+
+body.region-admin {
+    padding: 0px;
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    margin: 0;
+    background-size: cover;
+}
+
+#user {
+    background-image: url("../img/img_fondo_users.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#mesas {
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#reservas {
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#incidencias {
+    background-image: url("");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.fondo-admin {
+    background-image: url("../img/img_admin.jpeg");
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-position-y: -150px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cuadro_admin {
+    height: 405px;
+    width: 650px;
+    border: 5px solid var(--marron1);
+    background: #ccd3db;
+    border-color: #416e7e;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btnadmin {
+    width: 100%;
+    height: 100px;
+    background-color: #5e5e66;
+    border-style: outset;
+    border-color: #FDFFF9;
+    border-radius: 7px;
+    border-bottom: 5px solid black;
+    text-decoration: none;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    position: relative;
+}
+
+.btnadmin:hover {
+    background-color: #927244;
+}
+
+.cuadro-admin {
+    height: 515px;
+    width: 673px;
+    border: 5px solid var(--marron1);
+    background: #cdb8ac;
+    border-color: #511301;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.tableAdmin th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #E1D9BE;
+    background-color: rgba(101, 115, 126);
+    border: 2pt solid rgba(17, 17, 17);
+}
+
+.tableAdmin td {
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #000000;
+    border: 2pt solid rgba(17, 17, 17);
+    font-weight: bold;
+}
+
+.tableAdmin tr {
+    border-spacing: 0px 20px;
+    border-left: 2pt solid rgba(17, 17, 17);
+    border-right: 2pt solid rgba(17, 17, 17);
+    border-top: 2pt solid rgba(17, 17, 17);
+    border-bottom: 2pt solid rgba(17, 17, 17);
+    background-color: rgba(192, 197, 206);
+}
+
+.tableAdmin tr:hover {
+    background-color: rgba(119, 119, 119);
+}
+
+.botonCre {
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    float: right;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    background-color: #bae1ff;
+    border-color: black;
+    border-bottom: 5px solid black;
+    float: left;
+    display: flex;
+}
+
+#logout {
+    background-color: #ffdfba;
+}
+
+.botonCre:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+.botonAct {
+    position: relative;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    float: center;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    background-color: #ffffba;
+    border-color: black;
+    border-bottom: 5px solid black;
+}
+
+.botonAct:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
+}
+
+.botonEli {
+    position: relative;
+    padding: 5px 10px;
+    margin: 0px 10px 10px 0px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    background-color: #ffb3ba;
+    border-color: black;
+    border-bottom: 5px solid black;
+    float: center;
+}
+
+.botonEli:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    border-bottom: 1px solid;
 }

@@ -5,5 +5,5 @@
     $stmt = $pdo->prepare("DELETE FROM tbl_incidencia WHERE id_incidencia=:id");
     $stmt->bindParam(':id',$id);
     $stmt -> execute();
-    header("Location:../view/control_sala.php");
+    header("Location:../process/incidencias_mantenimiento.php");
 ?>

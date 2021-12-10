@@ -8,7 +8,7 @@
         $stmt->execute();
         $comprobacion=$stmt->fetch(PDO::FETCH_ASSOC);
         try {
-            if (!$comprobacion=="") {
+            if (!$comprobacion=="" && $comprobacion['tipo_emp']=="Camarero") {
                 session_start();
                 $_SESSION['nombre']=$comprobacion['nombre_emp'];
                 header("location:../view/control_sala.php");
@@ -17,6 +17,12 @@
                 session_start();
                 $_SESSION['nombre_mantenimiento']=$comprobacion['nombre_emp'];
                 header("Location:../process/incidencias_mantenimiento.php");
+
+            }else if(!$comprobacion=="" && $comprobacion['tipo_emp']=="Administrador"){
+                session_start();
+                $_SESSION['nombre_admin']=$comprobacion['nombre_emp'];
+                header("Location:../view/control_admin.php");
+
             }else {
                 header("location: ../view/login.php");
             }
