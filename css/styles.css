@@ -526,3 +526,79 @@ body.region-admin {
     background-color: #8e3c0c;
     color: #fff;
 }
+
+.actualizar_mesas {
+    background-image: url("../img/img_act_mesa.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cuadro_actualizar_mesas {
+    height: 350px;
+    width: 650px;
+    border: 5px solid;
+    background: #d8d0bd;
+    border-color: #5f3926;
+}
+
+.cuadro_actualizar_mesas p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputActMesa {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #535961;
+    background-color: #5f3926;
+    outline: none;
+    color: #fff;
+}
+
+.btnActMesa {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #535961;
+    background-color: #5f3926;
+    color: #fff;
+}
+
+.crear_mesa {
+    background-image: url("../img/img_cre_mesajpeg.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cuadro_crear_mesa {
+    height: 350px;
+    width: 650px;
+    border: 5px solid;
+    background: #d0b297;
+    border-color: #725b4c;
+}
+
+.cuadro_crear_mesa p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputCreMesa {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #737e30;
+    background-color: #bb7a45;
+    outline: none;
+    color: #fff;
+}
+
+.btnCreMesa {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #737e30;
+    background-color: #bb7a45;
+    color: #fff;
+}

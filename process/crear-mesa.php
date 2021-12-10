@@ -20,25 +20,25 @@
                         <div class="form-group">
                             <p>Capacidad:<p>
                             <div>
-                                <input type="text" class="inputcrear" id="capacidad" name="capacidad" placeholder="Introduce la capacidad">
+                                <input type="text" class="inputCreMesa" id="capacidad" name="capacidad" placeholder="Introduce la capacidad">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Estado:</p>
                             <div>
-                                <input type="text" class="inputcrear" id="estado" name="estado" placeholder="Introduce el estado">
+                                <input type="text" class="inputCreMesa" id="estado" name="estado" placeholder="Introduce el estado">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Sala:</p>
                             <div>
-                                <input type="number" class="inputcrear" id="id_sala" name="id_sala" placeholder="Introduce la sala">
+                                <input type="number" class="inputCreMesa" id="id_sala" name="id_sala" placeholder="Introduce la sala">
                             </div>
                         </div>
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="botoncrear">Guardar</button>
-                                <button onClick="location.href='../process/mesas_admin.php'" class='botoncrear'>Cancelar</button>
+                                <button type="submit" class="btnCreMesa">Guardar</button>
+                                <button onClick="location.href='../process/mesas_admin.php'" class='btnCreMesa'>Cancelar</button>
                             </div>
                         </div>
                     </form>
