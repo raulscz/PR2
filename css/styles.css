@@ -270,6 +270,10 @@ body.region-admin {
     background-size: cover;
 }
 
+::placeholder {
+    color: #fff;
+}
+
 #user {
     background-image: url("../img/img_fondo_users.jpeg");
     background-size: cover;
@@ -439,4 +443,82 @@ body.region-admin {
     transform: translate(0px, 5px);
     -webkit-transform: translate(0px, 5px);
     border-bottom: 1px solid;
+}
+
+.crear {
+    background-image: url("../img/img_fondo_crear.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_crear {
+    height: 600px;
+    width: 650px;
+    border: 5px solid;
+    background: #c39a7c;
+    border-color: #1a79a1;
+}
+
+.cuadro_crear p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputcrear {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #5db4cf;
+    background-color: #bc7b66;
+    outline: none;
+    color: #fff;
+}
+
+.botoncrear {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #5db4cf;
+    background-color: #bc7b66;
+    color: #fff;
+}
+
+.actualizar {
+    background-image: url("../img/img_fondo_act.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_actualizar {
+    height: 560px;
+    width: 650px;
+    border: 5px solid;
+    background: #c5a68e;
+    border-color: #3e0903;
+}
+
+.cuadro_actualizar p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputactualizar {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #3e0903;
+    background-color: #8e3c0c;
+    outline: none;
+    color: #fff;
+}
+
+.botonactualizar {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #3e0903;
+    background-color: #8e3c0c;
+    color: #fff;
 }
