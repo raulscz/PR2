@@ -1,8 +1,8 @@
-<?php 
+<?php
 
  define("SERVIDOR","localhost");
  define("USUARIO","root");
  define("PASSWORD","");
- define("BD","db_restaurante");
+ define("BD","bd_restaurante_rsc");
 
 ?>

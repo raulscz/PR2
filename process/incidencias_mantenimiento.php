@@ -15,17 +15,17 @@
         <title>Vista Incidencias Mantenimiento</title>
     </head>
     <body class="fondosala">
-        <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
+        <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
         <br> <br>
         <div class="row flex-cv">
-            <div class="cuadro-figura">   
+            <div class="cuadro-figura">
                 <br><h2>Historial Incidencias Mantenimiento</h2><br>
                 <?php
                     $sentencia=$pdo->prepare("SELECT * FROM tbl_incidencia");
                     $sentencia->execute();
                     $listaReserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     $lista=$listaReserva;
-                    ?> 
+                    ?>
                     <br>
                     <table class="table">
                         <tr class="active">
@@ -94,7 +94,7 @@
             });
         </script>
     </body>
-    </html>      
+    </html>
 <?php
     }else{
         header('Location: ../view/login.php');
