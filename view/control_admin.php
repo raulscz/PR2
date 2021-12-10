@@ -22,13 +22,13 @@
                         <button class="btnadmin" OnClick="location.href='../process/usuario_admin.php'"><h1>Usuarios</h1></button>
                     </div>
                     <div class="column-2">
-                    <button class="btnadmin" OnClick="location.href='../process/'"><h1>Incidencias</h1></button>
+                    <button class="btnadmin" OnClick="location.href='../process/incidencias_admin.php'"><h1>Incidencias</h1></button>
                     </div>
                     <div class="column-2">
                     <button class="btnadmin" OnClick="location.href='../process/mesas_admin.php'"><h1>Mesas</h1></button>
                     </div>
                     <div class="column-2">
-                    <button class="btnadmin" OnClick="location.href='../process/'"><h1>Reservas</h1></button>
+                    <button class="btnadmin" OnClick="location.href='../process/reservas_admin.php'"><h1>Reservas</h1></button>
                     </div>
                     <div class="column">
                         <button class="btnadmin" OnClick="location.href='../process/logout.proc.php'"><h1>Logout</h1></button>
