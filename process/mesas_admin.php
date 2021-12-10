@@ -13,10 +13,10 @@
             <link rel="stylesheet" href="../css/styles.css">
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         </head>
-        <body class="region-admin" id="user">
+        <body class="region-admin" id="mesas">
             <br>
             <div>
-                <form action="../process/crear-usuario.php" method="POST" enctype="multipart/form">
+                <form action="../process/crear-mesa.php" method="POST">
                     <button class= "botonCre" type="submit" name="Crear" value="Crear">Crear</button>
                 </form>
                 <form action="../view/control_admin.php" method="POST">
@@ -28,40 +28,36 @@
             </div>
             <div class="row">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT * FROM tbl_empleado");
+                        $sentencia=$pdo->prepare("SELECT * FROM tbl_mesa;");
                         $sentencia->execute();
                     ?>
                     <table class="tableAdmin">
                         <tr class="active">
-                            <th>ID</th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>CORREO</th>
-                            <th>PUESTRO</th>
-                            <th>FOTO</th>
+                            <th>ID MESA</th>
+                            <th>CAPACIDAD</th>
+                            <th>ESTADO</th>
+                            <th>ID SALA</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                         <?php
-                            $listaUsuarios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($listaUsuarios as $registro){ 
+                            $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+                            foreach($listaMesas as $registro){ 
                         ?>
                         <tr>
-                            <td><?php echo "{$registro['id_emp']}";?></td>
-                            <td><?php echo "{$registro['nombre_emp']}";?></td>
-                            <td><?php echo "{$registro['apellido_emp']}";?></td>
-                            <td><?php echo "{$registro['email_emp']}";?></td>
-                            <td><?php echo "{$registro['tipo_emp']}";?></td>
-                            <td><?php echo "{$registro['foto_emp']}";?></td>
+                            <td><?php echo "{$registro['id_mesa']}";?></td>
+                            <td><?php echo "{$registro['capacidad']}";?></td>
+                            <td><?php echo "{$registro['estado']}";?></td>
+                            <td><?php echo "{$registro['id_sala']}";?></td>
                             <td>
-                                <form action="../process/act-usuario.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="id_emp" value="<?php echo "{$registro['id_emp']}";?>">
+                                <form action="../process/act-mesa.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                                     <button class= "botonAct" type="submit" name="Modificar" value="Modificar">Modificar</button>
                                 </form>
                             </td>
                             <td>
-                                <form action="../process/eliminar-usuario.php" method="POST">
-                                    <input type="hidden" name="id_emp" value="<?php echo "{$registro['id_emp']}";?>">
+                                <form action="../process/eliminar-mesa.php" method="POST">
+                                    <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                                     <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar">Eliminar</button>
                                 </form>
                             </td>
