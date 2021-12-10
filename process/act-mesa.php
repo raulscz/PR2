@@ -13,9 +13,9 @@
             <title>Formulario Actualizar Mesa</title>
         </head>
 
-        <body class="actualizar">
+        <body class="actualizar_mesas">
             <div class="row flex-cv">
-                <div class="cuadro_actualizar">
+                <div class="cuadro_actualizar_mesas">
                     <?php
                         $id=$_REQUEST['id_mesa'];
 
@@ -30,26 +30,26 @@
                         <div class="form-group">
                             <p>Capacidad:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="capacidad" name="capacidad" value="<?php echo "{$registro['capacidad']}";?>">
+                                <input type="text" class="inputActMesa" id="capacidad" name="capacidad" value="<?php echo "{$registro['capacidad']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Estado:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="estado" name="estado" value="<?php echo "{$registro['estado']}";?>">
+                                <input type="text" class="inputActMesa" id="estado" name="estado" value="<?php echo "{$registro['estado']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Sala:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="id_sala" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
+                                <input type="text" class="inputActMesa" id="id_sala" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <div>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
-                                <button type="submit" class="botonactualizar">Guardar</button>
-                                <button onClick="location.href='../process/mesas_admin.php'" class='botonactualizar'>Cancelar</button>
+                                <button type="submit" class="btnActMesa">Guardar</button>
+                                <button onClick="location.href='../process/mesas_admin.php'" class='btnActMesa'>Cancelar</button>
                             </div>
                         </div>
                     </form>
