@@ -25,7 +25,7 @@
                     <button class="btnadmin" OnClick="location.href='../process/'"><h1>Incidencias</h1></button>
                     </div>
                     <div class="column-2">
-                    <button class="btnadmin" OnClick="location.href='../process/'"><h1>Mesas</h1></button>
+                    <button class="btnadmin" OnClick="location.href='../process/mesas_admin.php'"><h1>Mesas</h1></button>
                     </div>
                     <div class="column-2">
                     <button class="btnadmin" OnClick="location.href='../process/'"><h1>Reservas</h1></button>

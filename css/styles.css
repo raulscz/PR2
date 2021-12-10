@@ -281,7 +281,7 @@ body.region-admin {
 }
 
 #mesas {
-    background-image: url("");
+    background-image: url("../img/img_fondo_mesas.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -395,6 +395,10 @@ body.region-admin {
 
 #logout {
     background-color: #ffdfba;
+}
+
+#crl_adm {
+    background-color: #baffc9;
 }
 
 .botonCre:active {
