@@ -287,7 +287,7 @@ body.region-admin {
 }
 
 #reservas {
-    background-image: url("");
+    background-image: url("../img/img_fondo_res.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -678,5 +678,83 @@ body.region-admin {
     border-radius: 7px;
     border-color: #d65616;
     background-color: #9f9fa4;
+    color: #fff;
+}
+
+.crear_res {
+    background-image: url("../img/img_cre_res.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_crear_res {
+    height: 450px;
+    width: 650px;
+    border: 5px solid;
+    background: #e09051;
+    border-color: #8f1c07;
+}
+
+.cuadro_crear_res p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputCreRes {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #6ca27e;
+    background-color: #816e70;
+    outline: none;
+    color: #fff;
+}
+
+.btnCreRes {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #6ca27e;
+    background-color: #816e70;
+    color: #fff;
+}
+
+.actualizar_res {
+    background-image: url("../img/img_act_res.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cuadro_actualizar_res {
+    height: 450px;
+    width: 650px;
+    border: 5px solid;
+    background: #7e655a;
+    border-color: #141c1d;
+}
+
+.cuadro_actualizar_res p {
+    font-weight: bold;
+    margin: 0;
+}
+
+.inputActRes {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #141c1d;
+    background-color: #f0b696;
+    outline: none;
+    color: #fff;
+}
+
+.btnActRes {
+    width: 300px;
+    height: 45px;
+    border-radius: 7px;
+    border-color: #141c1d;
+    background-color: #f0b696;
     color: #fff;
 }
