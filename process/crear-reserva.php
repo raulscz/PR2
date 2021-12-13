@@ -18,6 +18,12 @@
                     <form action="../process/recibir_crear_res.php" method="POST">
                         <br>
                         <div class="form-group">
+                            <p>Nombre Reserva:</p>
+                            <div>
+                                <input type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" placeholder="Introduce el nombre">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <p>Fecha:<p>
                             <div>
                                 <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" placeholder="Introduce la fecha">
@@ -27,12 +33,6 @@
                             <p>Hora:</p>
                             <div>
                                 <input type="time" class="inputCreRes" id="hora_reserva" name="hora_reserva" placeholder="Introduce la hora">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <p>Hora Final:</p>
-                            <div>
-                                <input type="time" class="inputCreRes" id="hora_fi_reserva" name="hora_fi_reserva" placeholder="Introduce la hora final">
                             </div>
                         </div>
                         <div class="form-group">

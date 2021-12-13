@@ -34,9 +34,9 @@
                     <table class="tableAdmin">
                         <tr class="active">
                             <th>ID</th>
+                            <th>NOMBRE RESERVA</th>
                             <th>FECHA</th>
                             <th>HORA PRINCIPIO</th>
-                            <th>HORA FINAL</th>
                             <th>ID MESA</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
@@ -47,9 +47,9 @@
                         ?>
                         <tr>
                             <td><?php echo "{$registro['id_reserva']}";?></td>
+                            <td><?php echo "{$registro['nombre_reserva']}";?></td>
                             <td><?php echo "{$registro['data_reserva']}";?></td>
                             <td><?php echo "{$registro['hora_reserva']}";?></td>
-                            <td><?php echo "{$registro['hora_fi_reserva']}";?></td>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td>
                                 <form action="../process/act-reserva.php" method="POST" enctype="multipart/form-data">

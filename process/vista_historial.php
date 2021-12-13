@@ -37,21 +37,21 @@
                         $hora=$_REQUEST['hora_reserva'];
                         $mesa=$_REQUEST['mesa'];
                         if($fecha="" && $hora="" && $mesa=""){
-                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id;"); //Cambiar el 1 por $id_sala
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id;"); //Cambiar el 1 por $id_sala
                         }else if(!empty($fecha) && $hora="" && $mesa=""){
-                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%';");
+                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%';");
                         }else if(!empty($fecha) && !empty($hora) && $mesa=""){
-                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.hora_reserva LIKE '%$hora%';");
+                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.hora_reserva LIKE '%$hora%';");
                         }else if(!empty($fecha) && $hora="" && !empty($mesa)){
-                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
+                            $setencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
                         }else if($fecha="" && !empty($hora) && $mesa=""){
-                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.hora_reserva LIKE '%$hora%';");
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.hora_reserva LIKE '%$hora%';");
                         }else if($fecha="" && !empty($hora) && !empty($mesa)){
-                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.hora_reserva LIKE '%$hora%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.hora_reserva LIKE '%$hora%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
                         }else if($fecha="" && $hora="" && !empty($mesa)){
-                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.id_mesa LIKE '%$mesa%';");
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.id_mesa LIKE '%$mesa%';");
                         }else{
-                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.hora_fi_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.hora_reserva LIKE '%$hora%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,tbl_reserva.hora_reserva,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_reserva.data_reserva LIKE '%$fecha%' AND tbl_reserva.hora_reserva LIKE '%$hora%' AND tbl_reserva.id_mesa LIKE '%$mesa%';");
                         }
                         $sentencia->execute();
                         $listaReserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -61,19 +61,19 @@
                         <table class="table">
                             <tr class="active">
                                 <th>ID</th>
+                                <th>Nombre</th>
                                 <th>Fecha</th>
                                 <th>Hora Inicial</th>
-                                <th>Hora Final</th>
                                 <th>Mesa</th>
                             </tr>
                             <?php
-                                foreach($lista as $registro){   
+                                foreach($lista as $registro){
                             ?>
                             <tr>
                                 <td><?php echo "{$registro['id_reserva']}";?></td>
+                                <td><?php echo "{$registro['nombre_reserva']}";?></td>
                                 <td><?php echo "{$registro['data_reserva']}";?></td>
                                 <td><?php echo "{$registro['hora_reserva']}";?></td>
-                                <td><?php echo "{$registro['hora_fi_reserva']}";?></td>
                                 <td><?php echo "{$registro['id_mesa']}";?></td>
                             </tr>
                             <?php } ?>

@@ -18,11 +18,11 @@
     try{
         $stmt->execute();
         $pdo->commit();
-        header("Location:../process/reservas_admin.php");
+        header("Location:../view/control_sala.php");
     }catch(PDOException $e){
         echo $e->getMessage();
         $pdo->rollback();
-        header("Location:../process/reservas_admin.php");
+        header("Location:../view/control_sala.php");
     }
-    header("Location:../process/reservas_admin.php");
+    header("Location:../view/control_sala.php");
 ?>
