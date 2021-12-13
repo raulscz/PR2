@@ -16,7 +16,7 @@
         <body class="crear">
             <div class="row flex-cv">
                 <div class="cuadro_crear">
-                    <form action="../process/recibir_crear.php" method="POST">
+                    <form action="../process/recibir_crear.php" method="POST" enctype="multipart/form-data">
                         <br>
                         <div class="form-group">
                             <p>Nombre:<p>

@@ -37,7 +37,7 @@
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
                             <th>CORREO</th>
-                            <th>PUESTRO</th>
+                            <th>PUESTO</th>
                             <th>FOTO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
@@ -52,7 +52,7 @@
                             <td><?php echo "{$registro['apellido_emp']}";?></td>
                             <td><?php echo "{$registro['email_emp']}";?></td>
                             <td><?php echo "{$registro['tipo_emp']}";?></td>
-                            <td><?php echo "{$registro['foto_emp']}";?></td>
+                            <td><img src="<?php echo $registro['foto_emp'];?>" alt="Foto Usuario"></td>
                             <td>
                                 <form action="../process/act-usuario.php" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="id_emp" value="<?php echo "{$registro['id_emp']}";?>">
