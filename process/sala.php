@@ -19,20 +19,21 @@
         </head>
         <body class="fondosala">
             <br>
-            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Historial</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
+            <form class="formbtn" action="../process/vista_historial.php" method="POST"><input type="hidden" name="id_sala" value="<?php echo $id_sala; ?>"><button type="submit" class="botonessala">Reservas</button></form> <br> <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
             <br> <br>
             <div class="row flex-cv">
                 <div class="cuadro-figura">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.estado, tbl_mesa.id_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id_sala ");
+                        $sentencia=$pdo->prepare("SELECT tbl_mesa.id_mesa, tbl_mesa.capacidad,tbl_mesa.estado, tbl_mesa.id_sala FROM tbl_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id_sala ");
                         $sentencia->execute();          
                     ?>
                     <br><h2>Información Mesas</h2>
                     <table class="table">
                         <tr class="active">
                             <th>MESA</th>
+                            <th>Capacidad</th>
                             <th>ESTADO</th>
-                            <th>ACCIONES</th>
+                            <th>RESERVAR</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -40,14 +41,10 @@
                         ?>
                         <tr>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
+                            <td><?php echo "{$registro['capacidad']}";?></td>
                             <td><?php echo "{$registro['estado']}";?></td>
-                            <td><form method="GET" action="../process/recibir_estado.php">
-                                <select name="select">
-                                    <option value="Ocupado">Ocupado</option>
-                                    <option value="Libre" selected>Libre</option>
-                                    <option value="Mantenimiento">Mantenimiento</option>
-                                </select>
-                                <button class= "boton" type="submit" name="Enviar" value="Enviar">Confirmar</button>
+                            <td><form method="POST" action="../process/crear-res-usu.php">
+                                <button class= "boton" type="submit" name="Enviar" value="Enviar">RESERVAR</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </form></td>
                         </tr>
