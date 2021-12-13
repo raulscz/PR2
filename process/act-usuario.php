@@ -25,7 +25,7 @@
                         $usuario=$sql->fetchAll(PDO::FETCH_ASSOC);
                         foreach($usuario as $registro){
                     ?>
-                    <form action="../process/recibir_act_usu.php" method="POST">
+                    <form action="../process/recibir_act_usu.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <p>Nombre:</p>
                             <div>
