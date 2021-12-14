@@ -3,7 +3,7 @@
     session_start();
     /* Controla que la sesión esté iniciada */
     if (!$_SESSION['nombre']=="") {
-        $id=$_POST['id_mesa'];
+        $id=$_REQUEST['id_mesa'];
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -19,11 +19,14 @@
         <?php
             $stmt=$pdo->prepare("SELECT id_mesa FROM tbl_mesa WHERE id_mesa=$id");
             $stmt->execute();
+            //$qry=$pdo->prepare("SELECT * FROM tbl_horario");
+           // $qry->execute();
             $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            //$resultado=$qry->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <div class="row flex-cv">
             <div class="cuadro_crear_res">
-                <form action="../process/rec-cre-res-usu.php" method="POST">
+                <form action="../process/buscar-reserva.php" method="POST">
                     <br>
                     <div class="form-group">
                         <p>Nombre Reserva:</p>
@@ -38,12 +41,6 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <p>Hora:</p>
-                        <div>
-                            <input type="time" class="inputCreRes" id="hora_reserva" name="hora_reserva" placeholder="Introduce la hora">
-                        </div>
-                    </div>
-                    <div class="form-group">
                         <p>ID Mesa:</p>
                         <?php
                             foreach ($result as $registro){
@@ -55,7 +52,7 @@
                     <?php } ?>
                     <div class="form-group">
                         <div>
-                            <button type="submit" class="btnCreRes">Guardar</button>
+                            <button type="submit" class="btnCreRes">Buscar</button>
                             <button onClick="location.href='../view/control_sala.php'" class='btnCreRes'>Cancelar</button>
                         </div>
                     </div>
@@ -68,3 +65,4 @@
     }else{
         header('Location: ../view/login.php');
     }
+?>

@@ -37,14 +37,14 @@
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($listaMesas as $registro){ 
+                            foreach($listaMesas as $registro){
                         ?>
                         <tr>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td><?php echo "{$registro['capacidad']}";?></td>
                             <td><?php echo "{$registro['estado']}";?></td>
-                            <td><form method="POST" action="../process/crear-res-usu.php">
-                                <button class= "boton" type="submit" name="Enviar" value="Enviar">RESERVAR</button>
+                            <td><form method="POST" action="../process/dispo_mesa.php">
+                                <button class= "boton" type="submit" name="Enviar" value="Enviar">DISPONIBILIDAD</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </form></td>
                         </tr>
