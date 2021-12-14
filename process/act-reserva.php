@@ -26,29 +26,24 @@
                         foreach($reserva as $registro){
                     ?>
                     <br>
-                    <form action="../process/recibir_act_res.php" method="POST">
+                    <form action="../process/buscar-act-res-admin.php" method="POST">
+                        <br>
                         <div class="form-group">
-                            <p>Fecha:</p>
+                            <p>Nombre Reserva:</p>
                             <div>
-                                <input type="date" class="inputActRes" id="data_reserva" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
+                                <input type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" value="<?php echo "{$registro['nombre_reserva']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <p>Hora:</p>
+                            <p>Fecha:<p>
                             <div>
-                                <input type="time" class="inputActRes" id="hora_reserva" name="hora_reserva" value="<?php echo "{$registro['hora_reserva']}";?>">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <p>Hora Fi:</p>
-                            <div>
-                                <input type="time" class="inputActRes" id="hora_fi_reserva" name="hora_fi_reserva" value="<?php echo "{$registro['hora_fi_reserva']}";?>">
+                                <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Mesa:</p>
                             <div>
-                                <input type="number" class="inputActRes" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="number" class="inputCreRes" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </div>
                         </div>
                         <div class="form-group">

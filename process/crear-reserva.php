@@ -15,7 +15,7 @@
         <body class="crear_res">
             <div class="row flex-cv">
                 <div class="cuadro_crear_res">
-                    <form action="../process/recibir_crear_res.php" method="POST">
+                    <form action="../process/buscar-res-admin.php" method="POST">
                         <br>
                         <div class="form-group">
                             <p>Nombre Reserva:</p>
@@ -27,12 +27,6 @@
                             <p>Fecha:<p>
                             <div>
                                 <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" placeholder="Introduce la fecha">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <p>Hora:</p>
-                            <div>
-                                <input type="time" class="inputCreRes" id="hora_reserva" name="hora_reserva" placeholder="Introduce la hora">
                             </div>
                         </div>
                         <div class="form-group">

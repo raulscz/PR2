@@ -28,7 +28,7 @@
             </div>
             <div class="row">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT * FROM tbl_reserva");
+                        $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,CONCAT_WS('-', tbl_horario.hora_ini, tbl_horario.hora_fi) as Horario,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala INNER JOIN tbl_horario ON tbl_horario.id_horario = tbl_reserva.id_horario");
                         $sentencia->execute();
                     ?>
                     <table class="tableAdmin">
@@ -36,7 +36,7 @@
                             <th>ID</th>
                             <th>NOMBRE RESERVA</th>
                             <th>FECHA</th>
-                            <th>HORA PRINCIPIO</th>
+                            <th>HORARIO</th>
                             <th>ID MESA</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
@@ -49,7 +49,7 @@
                             <td><?php echo "{$registro['id_reserva']}";?></td>
                             <td><?php echo "{$registro['nombre_reserva']}";?></td>
                             <td><?php echo "{$registro['data_reserva']}";?></td>
-                            <td><?php echo "{$registro['hora_reserva']}";?></td>
+                            <td><?php echo "{$registro['Horario']}";?></td>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td>
                                 <form action="../process/act-reserva.php" method="POST" enctype="multipart/form-data">
