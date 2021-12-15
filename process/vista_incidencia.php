@@ -20,68 +20,39 @@
         <button class="botonessala" OnClick="location.href='../view/control_sala.php'">Panel de control</button> <button class="botonessala" OnClick="location.href='../process/logout.proc.php'">Logout</button>
         <br> <br>
         <div class="row flex-cv">
-             <div class="cuadro-figura">   
-                <br><h2>Información Historial Incidencias</h2><br>
-                <form action="../process/vista_incidencia.php" method="POST">
-                    <input type="text" name="data_incidencia" placeholder="Fecha">
-                    <input type="text" name="hora_incidencia" placeholder="Hora">
-                    <input type="text" name="mesa" placeholder="Mesa">
-                    <input type="hidden" name="id_sala" value="<?php echo $id ?>">
-                    <input type="submit" value="Filtrar" name="filtro"> 
-                    
-                </form>
+            <div class="cuadro-figura">   
+                <br><h2>Información Historial Incidencias</h2>
                 <?php
-                    if(isset($_REQUEST['filtro'])){
-                        $fecha=$_REQUEST['data_incidencia'];
-                        $hora=$_REQUEST['hora_incidencia'];
-                        $mesa=$_REQUEST['mesa'];
-                        if($fecha="" && $hora="" && $mesa=""){
-                            $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id;"); //Cambiar el 1 por $id_sala
-                        }else if(!empty($fecha) && $hora="" && $mesa=""){
-                            $setencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.data_incidencia LIKE '%$fecha%';");
-                        }else if(!empty($fecha) && !empty($hora) && $mesa=""){
-                            $setencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.data_incidencia LIKE '%$fecha%' AND tbl_incidencia.hora_incidencia LIKE '%$hora%';");
-                        }else if(!empty($fecha) && $hora="" && !empty($mesa)){
-                            $setencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.data_incidencia LIKE '%$fecha%' AND tbl_incidencia.id_mesa LIKE '%$mesa%';");
-                        }else if($fecha="" && !empty($hora) && $mesa=""){
-                            $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.hora_incidencia LIKE '%$hora%';");
-                        }else if($fecha="" && !empty($hora) && !empty($mesa)){
-                            $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.hora_incidencia LIKE '%$hora%' AND tbl_incidencia.id_mesa LIKE '%$mesa%';");
-                        }else if($fecha="" && $hora="" && !empty($mesa)){
-                            $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.id_mesa LIKE '%$mesa%';");
-                        }else{
-                            $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id AND tbl_incidencia.data_incidencia LIKE '%$fecha%' AND tbl_incidencia.hora_incidencia LIKE '%$hora%' AND tbl_incidencia.id_mesa LIKE '%$mesa%';");
-                        }
-                        $sentencia->execute();
-                        $listaReserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-                        $lista=$listaReserva;
-                        ?> 
-                        <br>
-                        <table class="table">
-                            <tr class="active">
-                                <th>ID</th>
-                                <th>Fecha</th>
-                                <th>Hora Inicial</th>
-                                <th>Descripción</th>
-                                <th>Mesa</th>
-                                <th>Modificar</th>
-                            </tr>
-                            <?php
-                                foreach($lista as $registro){   
-                            ?>
-                            <tr>
-                                <td><?php echo "{$registro['id_incidencia']}";?></td>
-                                <td><?php echo "{$registro['data_incidencia']}";?></td>
-                                <td><?php echo "{$registro['hora_incidencia']}";?></td>
-                                <td><?php echo "{$registro['desc_incidencia']}";?></td>
-                                <td><?php echo "{$registro['id_mesa']}";?></td>
-                                <td><button type="button" class="boton" data-toggle="modal" data-target="#editChildresn<?php echo $registro['id_incidencia']; ?>">Modificar</button></td>
-                            </tr>
-                            <!--Ventana Modal para Actualizar--->
-                            <?php  include('../process/modal_modificar.php'); ?>
-                            <?php } ?>
-                        </table>
-                    <?php } ?>
+                    $sentencia=$pdo->prepare("SELECT tbl_incidencia.id_incidencia,tbl_incidencia.data_incidencia,tbl_incidencia.hora_incidencia,tbl_incidencia.desc_incidencia,tbl_incidencia.id_mesa FROM tbl_incidencia INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_incidencia.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala WHERE tbl_sala.id_sala = $id;"); //Cambiar el 1 por $id_sala
+                    $sentencia->execute();
+                    $listaReserva=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+                    $lista=$listaReserva;
+                ?> 
+                    <br>
+                    <table class="table">
+                        <tr class="active">
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Hora Inicial</th>
+                            <th>Descripción</th>
+                            <th>Mesa</th>
+                            <th>Modificar</th>
+                        </tr>
+                        <?php
+                            foreach($lista as $registro){   
+                        ?>
+                        <tr>
+                            <td><?php echo "{$registro['id_incidencia']}";?></td>
+                            <td><?php echo "{$registro['data_incidencia']}";?></td>
+                            <td><?php echo "{$registro['hora_incidencia']}";?></td>
+                            <td><?php echo "{$registro['desc_incidencia']}";?></td>
+                            <td><?php echo "{$registro['id_mesa']}";?></td>
+                            <td><button type="button" class="boton" data-toggle="modal" data-target="#editChildresn<?php echo $registro['id_incidencia']; ?>">Modificar</button></td>
+                        </tr>
+                        <!--Ventana Modal para Actualizar--->
+                        <?php  include('../process/modal_modificar.php'); ?>
+                        <?php } ?>
+                    </table>
             </div>
         </div>
         <script src="../js/jquery.min.js"></script>
