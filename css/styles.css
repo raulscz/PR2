@@ -399,6 +399,10 @@ body.region-admin {
     display: flex;
 }
 
+#inci_copia {
+    background-color: #f1cbff;
+}
+
 #logout {
     background-color: #ffdfba;
 }
