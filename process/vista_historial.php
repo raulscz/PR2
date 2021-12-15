@@ -21,14 +21,7 @@
         <br> <br>
         <div class="row flex-cv">
             <div class="cuadro-figura">
-                <br><h2>Información Historial Reservas</h2><br>
-                <form action="../process/vista_historial.php" method="POST">
-                    <input type="text" name="data_reserva" placeholder="Fecha">
-                    <input type="text" name="hora_reserva" placeholder="Hora">
-                    <input type="number" name="mesa" placeholder="Mesa">
-                    <input type="hidden" name="id_sala" value="<?php echo $id ?>">
-                    <input type="submit" value="Filtrar" name="filtro">
-                </form>
+                <br><h2>Información Historial Reservas</h2>
                 <?php
                     $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,CONCAT_WS('-', tbl_horario.hora_ini, tbl_horario.hora_fi) as Horario,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala INNER JOIN tbl_horario ON tbl_horario.id_horario = tbl_reserva.id_horario WHERE tbl_sala.id_sala = $id_sala;"); //Cambiar el 1 por $id_sala
                     $sentencia->execute();

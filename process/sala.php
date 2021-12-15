@@ -3,10 +3,10 @@
     session_start();
     /* Controla que la sesión esté iniciada */
     if (!$_SESSION['nombre']=="") {
-        $id_sala=$_GET['id_sala'];
+        $id_sala=$_REQUEST['id_sala'];
         // echo $id_sala;
         // die; ?>
-        
+
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -34,6 +34,7 @@
                             <th>Capacidad</th>
                             <th>ESTADO</th>
                             <th>RESERVAR</th>
+                            <th>INCIDENCIA</th>
                         </tr>
                         <?php
                             $listaMesas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -46,6 +47,11 @@
                             <td><form method="POST" action="../process/dispo_mesa.php">
                                 <button class= "boton" type="submit" name="Enviar" value="Enviar">DISPONIBILIDAD</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                            </form></td>
+                            <td><form method="POST" action="../process/recibir_estado.php">
+                                <button class= "boton" type="submit" name="Enviar" value="Enviar">INCIDENCIA</button>
+                                <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="hidden" name="estado" value="<?php echo "{$registro['estado']}";?>">
                             </form></td>
                         </tr>
                         <?php } ?>

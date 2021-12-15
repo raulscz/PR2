@@ -20,7 +20,7 @@
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreInci" id="data_incidencia" name="data_incidencia" placeholder="Introduce la fecha">
+                                <input type="date" class="inputCreInci" id="data_incidencia" min="<?php echo date("Y-m-d"); ?>" name="data_incidencia" placeholder="Introduce la fecha">
                             </div>
                         </div>
                         <div class="form-group">

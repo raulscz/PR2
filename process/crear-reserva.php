@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" placeholder="Introduce la fecha">
+                                <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" min="<?php echo date("Y-m-d"); ?>" placeholder="Introduce la fecha">
                             </div>
                         </div>
                         <div class="form-group">
@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <div>
                                 <button type="submit" class="btnCreRes">Guardar</button>
-                                <button onClick="location.href='../process/reservas_admin.php'" class='btnCreRes'>Cancelar</button>
+                                <input type="button" onClick="location.href='../process/reservas_admin.php'" class='btnCreRes' value="Cancelar">
                             </div>
                         </div>
                     </form>

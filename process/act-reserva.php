@@ -26,8 +26,7 @@
                         foreach($reserva as $registro){
                     ?>
                     <br>
-                    <form action="../process/buscar-act-res-admin.php" method="POST">
-                        <br>
+                    <form action="../process/buscar-res-act-admin.php" method="POST">
                         <div class="form-group">
                             <p>Nombre Reserva:</p>
                             <div>
@@ -37,7 +36,7 @@
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreRes" id="data_reserva" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
+                                <input type="date" class="inputCreRes" id="data_reserva" min="<?php echo date("Y-m-d"); ?>" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -50,7 +49,7 @@
                             <div>
                                 <input type="hidden" name="id_reserva" value="<?php echo "{$registro['id_reserva']}";?>">
                                 <button type="submit" class="btnActRes">Guardar</button>
-                                <button onClick="location.href='../process/reservas_admin.php'" class='btnActRes'>Cancelar</button>
+                                <input type="button" onClick="location.href='../process/reservas_admin.php'" class='btnActRes' value="Cancelar">
                             </div>
                         </div>
                     </form>
