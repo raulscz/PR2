@@ -22,8 +22,8 @@
                 <form action="../view/control_admin.php" method="POST">
                     <button id="crl_adm" class= "botonCre" type="submit" name="logout" value="logout">Vista</button>
                 </form>
-                <form action="../process/copia_admin.php" method="POST">
-                    <button class= "botonCre" id="inci_copia" type="submit" name="Enviar" value="Enviar">Copia</button>
+                <form action="../process/incidencias_admin.php" method="POST">
+                    <button class= "botonCre" id="inci_copia" type="submit" name="Enviar" value="Enviar">Incidencias</button>
                 </form>
                 <form action="../process/logout.proc.php" method="POST">
                     <button id="logout" class= "botonCre" type="submit" name="logout" value="logout">Logout</button>
@@ -31,7 +31,7 @@
             </div>
             <div class="row">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT * FROM tbl_incidencia");
+                        $sentencia=$pdo->prepare("SELECT * FROM tbl_copia");
                         $sentencia->execute();
                     ?>
                     <table class="tableAdmin">
@@ -41,8 +41,6 @@
                             <th>HORA</th>
                             <th>DESCRIPCIÓN</th>
                             <th>ID MESA</th>
-                            <th>MODIFICAR</th>
-                            <th>ELIMINAR</th>
                         </tr>
                         <?php
                             $listaIncidencias=$sentencia->fetchAll(PDO::FETCH_ASSOC);
@@ -54,18 +52,6 @@
                             <td><?php echo "{$registro['hora_incidencia']}";?></td>
                             <td><?php echo "{$registro['desc_incidencia']}";?></td>
                             <td><?php echo "{$registro['id_mesa']}";?></td>
-                            <td>
-                                <form action="../process/act-inci.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$resultado['id_incidencia']}";?>">
-                                    <button class= "botonAct" type="submit" name="Modificar" value="Modificar">Modificar</button>
-                                </form>
-                            </td>
-                            <td>
-                                <form action="../process/eliminar-inci.php" method="POST">
-                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$resultado['id_incidencia']}";?>">
-                                    <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar">Eliminar</button>
-                                </form>
-                            </td>
                         </tr>
                         <?php } ?>
                     </table>
