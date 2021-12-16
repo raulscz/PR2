@@ -47,6 +47,7 @@
                             <td><form method="POST" action="../process/dispo_mesa.php">
                                 <button class= "boton" type="submit" name="Enviar" value="Enviar">DISPONIBILIDAD</button>
                                 <input type="hidden" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input type="hidden" name="estado" value="<?php echo "{$registro['estado']}";?>">
                             </form></td>
                             <td><form method="POST" action="../process/recibir_estado.php">
                                 <button class= "boton" type="submit" name="Enviar" value="Enviar">INCIDENCIA</button>

@@ -3,7 +3,8 @@
     session_start();
     /* Controla que la sesión esté iniciada */
     if (!$_SESSION['nombre']=="") {
-        $id=$_POST['id_mesa']; ?>
+        $id=$_POST['id_mesa']; 
+        $estado = $_REQUEST['estado'];?>
 
         <!DOCTYPE html>
         <html lang="en">
@@ -22,36 +23,52 @@
             <div class="row flex-cv">
                 <div class="cuadro-figura">
                     <?php
-                        $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,CONCAT_WS('-', tbl_horario.hora_ini, tbl_horario.hora_fi) as Horario,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala INNER JOIN tbl_horario ON tbl_horario.id_horario = tbl_reserva.id_horario WHERE tbl_mesa.id_mesa = $id ");
-                        $sentencia->execute();
-                    ?>
-                    <br><h2>Información Mesa <?php echo $id ?></h2>
-                    <table class="table">
-                        <tr class="active">
-                            <th>ID RESERVA</th>
-                            <th>NOMBRE RESERVA</th>
-                            <th>FECHA RESERVA</th>
-                            <th>HORARIO RESERVA</th>
-                            <th>ID MESA</th>
-                        </tr>
-                        <?php
-                            $listaReservaMesa=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($listaReservaMesa as $registro){ 
+                        if ($estado=='Mantenimiento'){ ?>
+                        <br><h2>Información Mesa <?php echo $id ?></h2>
+                        <form>
+                            <div class="form-group">
+                                <h4>Esta Mesa No Se Encuentra Disponible En Estos Momentos!</h4>
+                                <div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="button" onClick="location.href='../view/control_sala.php'" class='boton' value="VOLVER">
+                                </div>
+                            </div>
+                        </form>
+                        <?php } else {
+                            $sentencia=$pdo->prepare("SELECT tbl_reserva.id_reserva,tbl_reserva.nombre_reserva,tbl_reserva.data_reserva,CONCAT_WS('-', tbl_horario.hora_ini, tbl_horario.hora_fi) as Horario,tbl_reserva.id_mesa FROM tbl_reserva INNER JOIN tbl_mesa ON tbl_mesa.id_mesa=tbl_reserva.id_mesa INNER JOIN tbl_sala ON tbl_sala.id_sala=tbl_mesa.id_sala INNER JOIN tbl_horario ON tbl_horario.id_horario = tbl_reserva.id_horario WHERE tbl_mesa.id_mesa = $id ");
+                            $sentencia->execute();
                         ?>
-                        <tr>
-                            <td><?php echo "{$registro['id_reserva']}";?></td>
-                            <td><?php echo "{$registro['nombre_reserva']}";?></td>
-                            <td><?php echo "{$registro['data_reserva']}";?></td>
-                            <td><?php echo "{$registro['Horario']}";?></td>
-                            <td><?php echo "{$registro['id_mesa']}";?></td>
-                        </tr>
-                        <?php } ?>
-                    </table>
+                            <br><h2>Información Mesa <?php echo $id ?></h2>
+                            <table class="table">
+                                <tr class="active">
+                                    <th>ID RESERVA</th>
+                                    <th>NOMBRE RESERVA</th>
+                                    <th>FECHA RESERVA</th>
+                                    <th>HORARIO RESERVA</th>
+                                    <th>ID MESA</th>
+                                </tr>
+                                <?php
+                                    $listaReservaMesa=$sentencia->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($listaReservaMesa as $registro){ 
+                                ?>
+                                <tr>
+                                    <td><?php echo "{$registro['id_reserva']}";?></td>
+                                    <td><?php echo "{$registro['nombre_reserva']}";?></td>
+                                    <td><?php echo "{$registro['data_reserva']}";?></td>
+                                    <td><?php echo "{$registro['Horario']}";?></td>
+                                    <td><?php echo "{$registro['id_mesa']}";?></td>
+                                </tr>
+                                <?php } ?>
+                            </table>
                 </div>
             </div>
         </body>
         </html>
-<?php
+        <?php    }
     }else{
         header('Location: ../view/login.php');
     }
