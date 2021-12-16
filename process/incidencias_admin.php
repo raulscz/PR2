@@ -56,13 +56,13 @@
                             <td><?php echo "{$registro['id_mesa']}";?></td>
                             <td>
                                 <form action="../process/act-inci.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$resultado['id_incidencia']}";?>">
+                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$registro['id_incidencia']}";?>">
                                     <button class= "botonAct" type="submit" name="Modificar" value="Modificar">Modificar</button>
                                 </form>
                             </td>
                             <td>
                                 <form action="../process/eliminar-inci.php" method="POST">
-                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$resultado['id_incidencia']}";?>">
+                                    <input type="hidden" name="id_incidencia" value="<?php echo "{$registro['id_incidencia']}";?>">
                                     <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar">Eliminar</button>
                                 </form>
                             </td>
