@@ -20,7 +20,7 @@
 
             }else if(!$comprobacion=="" && $comprobacion['tipo_emp']=="Administrador"){
                 session_start();
-                $_SESSION['nombre_admin']=$comprobacion['nombre_emp'];
+                $_SESSION['nombre_admin']=$comprobacion['email_emp'];
                 header("Location:../view/control_admin.php");
 
             }else {
