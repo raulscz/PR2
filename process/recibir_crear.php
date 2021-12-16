@@ -17,7 +17,7 @@ if(isset( $_FILES["foto"] ) && !empty( $_FILES["foto"]["name"] )){
 }
 
 $pdo->beginTransaction();
-$stmt = $pdo->prepare("INSERT INTO tbl_empleado(nombre_emp, apellido_emp, email_emp, pass_emp, tipo_emp, foto_emp) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt = $pdo->prepare("INSERT INTO tbl_empleado(nombre_emp, apellido_emp, email_emp, pass_emp, tipo_emp, foto_emp) VALUES (?, ?, ?, md5(?), ?, ?)");
 $stmt ->bindParam(1,$nombre);
 $stmt ->bindParam(2,$apellido);
 $stmt ->bindParam(3,$email);

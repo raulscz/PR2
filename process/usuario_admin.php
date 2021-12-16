@@ -44,7 +44,8 @@
                         </tr>
                         <?php
                             $listaUsuarios=$sentencia->fetchAll(PDO::FETCH_ASSOC);
-                            foreach($listaUsuarios as $registro){ 
+                            foreach($listaUsuarios as $registro){
+
                         ?>
                         <tr>
                             <td><?php echo "{$registro['id_emp']}";?></td>
@@ -62,7 +63,11 @@
                             <td>
                                 <form action="../process/eliminar-usuario.php" method="POST">
                                     <input type="hidden" name="id_emp" value="<?php echo "{$registro['id_emp']}";?>">
-                                    <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar">Eliminar</button>
+                                    <?php if($_SESSION['nombre_admin']==$registro['email_emp']){ ?>
+                                        <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar" disabled style="background-color:	#555555;">Eliminar</button>
+                                    <?php } else{ ?>
+                                            <button class= "botonEli" type="submit" name="Eliminar" value="Eliminar">Eliminar</button>
+                                    <?php } ?>
                                 </form>
                             </td>
                         </tr>

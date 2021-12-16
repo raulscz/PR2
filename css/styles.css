@@ -503,6 +503,8 @@ body.region-admin {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .cuadro_actualizar {
@@ -618,6 +620,8 @@ body.region-admin {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .cuadro_crear_inci {
@@ -657,6 +661,8 @@ body.region-admin {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .cuadro_act_inci {
