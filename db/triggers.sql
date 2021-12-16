@@ -8,12 +8,12 @@ DELIMITER $$
   END $$
 DELIMITER ;
 
-/*Este Trigger Actualiza en la tabla tbl_copia cualquier cambio que ha tenido una incidencia en la tabla tbl_incidencia.*/
+/*Este Trigger Actualiza en la tabla tbl_copia cualquier cambio que ha tenido una incidencia en la tabla tbl_incidencia..*/
 
 DELIMITER $$
   CREATE TRIGGER ActuInci AFTER UPDATE ON tbl_inci
   FOR EACH ROW
   BEGIN 
-    UPDATE `tbl_copia` SET `data_inci` = NEW.data_inci, `hora_inci` = NEW.hora_inci, `desc_inci` = NEW.desc_inci, `id_mesa` = NEW.id_mesa, WHERE `id_inci` = NEW.id_inci;
+    UPDATE `tbl_copia` SET `data_inci` = NEW.data_inci, `hora_inci` = NEW.hora_inci, `desc_inci` = NEW.desc_inci, `id_mesa` = NEW.id_mesa WHERE `id_inci` = NEW.id_inci;
   END $$
 DELIMITER ;
