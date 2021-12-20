@@ -42,7 +42,7 @@
                             <input type="hidden" name="data_reserva" value="<?php echo $date; ?>">
                             <input type="hidden" name="id_mesa" value="<?php echo $idMesa; ?>">
                             <button type="submit" class="btnCreRes">Reservar</button>
-                            <button onClick="location.href='../view/control_sala.php'" class='btnCreRes'>Cancelar</button>
+                            <input type="button" onClick="location.href='../view/control_sala.php'" class='btnCreRes' value="Cancelar">
                         </div>
                     </div>
                 </form>
