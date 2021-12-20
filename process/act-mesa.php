@@ -30,19 +30,21 @@
                         <div class="form-group">
                             <p>Capacidad:</p>
                             <div>
-                                <input type="text" class="inputActMesa" id="capacidad" name="capacidad" value="<?php echo "{$registro['capacidad']}";?>">
+                                <input required type="number" class="inputActMesa" id="capacidad" name="capacidad" value="<?php echo "{$registro['capacidad']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Estado:</p>
-                            <div>
-                                <input type="text" class="inputActMesa" id="estado" name="estado" value="<?php echo "{$registro['estado']}";?>">
-                            </div>
+                            <select name="estado" class="inputActMesa">
+                                <option value="<?php echo "{$registro['estado']}";?>"><?php echo "{$registro['estado']}";?></option>
+                                <option value="Activo">Activo</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <p>ID Sala:</p>
                             <div>
-                                <input type="text" class="inputActMesa" id="id_sala" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
+                                <input required type="text" class="inputActMesa" id="id_sala" name="id_sala" value="<?php echo "{$registro['id_sala']}";?>">
                             </div>
                         </div>
                         <div class="form-group">

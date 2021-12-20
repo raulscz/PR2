@@ -30,19 +30,19 @@
                         <div class="form-group">
                             <p>Nombre Reserva:</p>
                             <div>
-                                <input type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" value="<?php echo "{$registro['nombre_reserva']}";?>">
+                                <input required type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" value="<?php echo "{$registro['nombre_reserva']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreRes" id="data_reserva" min="<?php echo date("Y-m-d"); ?>" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
+                                <input required type="date" class="inputCreRes" id="data_reserva" min="<?php echo date("Y-m-d"); ?>" name="data_reserva" value="<?php echo "{$registro['data_reserva']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Mesa:</p>
                             <div>
-                                <input type="number" class="inputCreRes" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input required type="number" class="inputCreRes" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </div>
                         </div>
                         <div class="form-group">

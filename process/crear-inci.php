@@ -20,25 +20,25 @@
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputCreInci" id="data_incidencia" min="<?php echo date("Y-m-d"); ?>" name="data_incidencia" placeholder="Introduce la fecha">
+                                <input required type="date" class="inputCreInci" id="data_incidencia" min="<?php echo date("Y-m-d"); ?>" name="data_incidencia" placeholder="Introduce la fecha">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Hora:</p>
                             <div>
-                                <input type="time" class="inputCreInci" id="hora_incidencia" name="hora_incidencia" placeholder="Introduce la hora">
+                                <input required type="time" class="inputCreInci" id="hora_incidencia" name="hora_incidencia" placeholder="Introduce la hora">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Descripción:</p>
                             <div>
-                                <input type="text" class="inputCreInci" id="desc_incidencia" name="desc_incidencia" placeholder="Introduce la descripción">
+                                <input required type="text" class="inputCreInci" id="desc_incidencia" name="desc_incidencia" placeholder="Introduce la descripción">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Mesa:</p>
                             <div>
-                                <input type="number" class="inputCreInci" id="id_mesa" name="id_mesa" placeholder="Introduce el ID de la mesa">
+                                <input required type="number" class="inputCreInci" id="id_mesa" name="id_mesa" placeholder="Introduce el ID de la mesa">
                             </div>
                         </div>
                         <div class="form-group">

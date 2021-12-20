@@ -31,13 +31,13 @@
                     <div class="form-group">
                         <p>Nombre Reserva:</p>
                         <div>
-                            <input type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" placeholder="Introduce el nombre">
+                            <input required type="text" class="inputCreRes" id="nombre_reserva" name="nombre_reserva" placeholder="Introduce el nombre">
                         </div>
                     </div>
                     <div class="form-group">
                         <p>Fecha:<p>
                         <div>
-                            <input type="date" class="inputCreRes" id="data_reserva" min="<?php echo date("Y-m-d"); ?>" name="data_reserva" placeholder="Introduce la fecha">
+                            <input required type="date" class="inputCreRes" id="data_reserva" min="<?php echo date("Y-m-d"); ?>" name="data_reserva" placeholder="Introduce la fecha">
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,7 +46,7 @@
                             foreach ($result as $registro){
                         ?>
                         <div>
-                            <input type="text" class="inputCreRes" id="id_mesa" name="id_mesa" value="<?php echo $registro['id_mesa']?>">
+                            <input required type="text" class="inputCreRes" id="id_mesa" name="id_mesa" value="<?php echo $registro['id_mesa']?>">
                         </div>
                     </div>
                     <?php } ?>
