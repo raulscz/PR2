@@ -20,19 +20,20 @@
                         <div class="form-group">
                             <p>Capacidad:<p>
                             <div>
-                                <input type="text" class="inputCreMesa" id="capacidad" name="capacidad" placeholder="Introduce la capacidad">
+                                <input required type="number" class="inputCreMesa" id="capacidad" name="capacidad" placeholder="Introduce la capacidad">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Estado:</p>
-                            <div>
-                                <input type="text" class="inputCreMesa" id="estado" name="estado" placeholder="Introduce el estado">
-                            </div>
+                            <select name="estado" class="inputCreMesa">
+                                <option value="Activo">Activo</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <p>ID Sala:</p>
                             <div>
-                                <input type="number" class="inputCreMesa" id="id_sala" name="id_sala" placeholder="Introduce la sala">
+                                <input required type="number" class="inputCreMesa" id="id_sala" name="id_sala" placeholder="Introduce la sala">
                             </div>
                         </div>
                         <div class="form-group">

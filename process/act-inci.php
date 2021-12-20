@@ -29,25 +29,25 @@
                         <div class="form-group">
                             <p>Fecha:<p>
                             <div>
-                                <input type="date" class="inputActInci" id="data_incidencia" name="data_incidencia" value="<?php echo "{$registro['data_incidencia']}";?>">
+                                <input required type="date" class="inputActInci" id="data_incidencia" name="data_incidencia" value="<?php echo "{$registro['data_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Hora:</p>
                             <div>
-                                <input type="time" class="inputActInci" id="hora_incidencia" name="hora_incidencia" value="<?php echo "{$registro['hora_incidencia']}";?>">
+                                <input required type="time" class="inputActInci" id="hora_incidencia" name="hora_incidencia" value="<?php echo "{$registro['hora_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Descripción:</p>
                             <div>
-                                <input type="text" class="inputActInci" id="desc_incidencia" name="desc_incidencia" value="<?php echo "{$registro['desc_incidencia']}";?>">
+                                <input required type="text" class="inputActInci" id="desc_incidencia" name="desc_incidencia" value="<?php echo "{$registro['desc_incidencia']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>ID Mesa:</p>
                             <div>
-                                <input type="number" class="inputActInci" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
+                                <input required type="number" class="inputActInci" id="id_mesa" name="id_mesa" value="<?php echo "{$registro['id_mesa']}";?>">
                             </div>
                         </div>
                         <div class="form-group">

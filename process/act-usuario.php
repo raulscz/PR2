@@ -29,32 +29,35 @@
                         <div class="form-group">
                             <p>Nombre:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="nombre_emp" name="nombre_emp" value="<?php echo "{$registro['nombre_emp']}";?>">
+                                <input required type="text" class="inputactualizar" id="nombre_emp" name="nombre_emp" value="<?php echo "{$registro['nombre_emp']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Apellido:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="apellido_emp" name="apellido_emp" value="<?php echo "{$registro['apellido_emp']}";?>">
+                                <input required type="text" class="inputactualizar" id="apellido_emp" name="apellido_emp" value="<?php echo "{$registro['apellido_emp']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Correo:</p>
                             <div>
-                                <input type="text" class="inputactualizar" id="email_emp" name="email_emp" value="<?php echo "{$registro['email_emp']}";?>">
+                                <input required type="text" class="inputactualizar" id="email_emp" name="email_emp" value="<?php echo "{$registro['email_emp']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Contraseña:</p>
                             <div>
-                                <input type="password" class="inputactualizar" id="pass_emp" name="pass_emp" value="<?php echo "{$registro['pass_emp']}";?>">
+                                <input required type="password" class="inputactualizar" id="pass_emp" name="pass_emp" value="<?php echo "{$registro['pass_emp']}";?>">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Rol:</p>
-                            <div>
-                                <input type="text" class="inputactualizar" id="tipo_emp" name="tipo_emp" value="<?php echo "{$registro['tipo_emp']}";?>">
-                            </div>
+                            <select name="tipo_emp" class="inputactualizar">
+                                <option value="<?php echo "{$registro['tipo_emp']}";?>"><?php echo "{$registro['tipo_emp']}";?></option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Camarero">Camarero</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <p>Foto:</p>

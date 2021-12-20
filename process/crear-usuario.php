@@ -21,32 +21,34 @@
                         <div class="form-group">
                             <p>Nombre:<p>
                             <div>
-                                <input type="text" class="inputcrear" id="name" name="name" placeholder="Introduce tu nombre">
+                                <input required type="text" class="inputcrear" id="name" name="name" placeholder="Introduce tu nombre">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Apellido:</p>
                             <div>
-                                <input type="text" class="inputcrear" id="surname" name="surname" placeholder="Introduce tu apellido">
+                                <input required type="text" class="inputcrear" id="surname" name="surname" placeholder="Introduce tu apellido">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Correo:</p>
                             <div>
-                                <input type="text" class="inputcrear" id="email" name="email" placeholder="Introduce tu correo">
+                                <input required type="text" class="inputcrear" id="email" name="email" placeholder="Introduce tu correo">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Contraseña:</p>
                             <div>
-                                <input type="text" class="inputcrear" id="pass" name="pass" placeholder="Introduce tu password">
+                                <input required type="text" class="inputcrear" id="pass" name="pass" placeholder="Introduce tu password">
                             </div>
                         </div>
                         <div class="form-group">
                             <p>Rol:</p>
-                            <div>
-                                <input type="text" class="inputcrear" id="tipo" name="tipo" placeholder="Introduce tu rol">
-                            </div>
+                            <select name="tipo" class="inputcrear">
+                                <option value="Administrador">Administrador</option>
+                                <option value="Camarero">Camarero</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <p>Foto:</p>
